@@ -9,12 +9,11 @@ const Hero: React.FC = () => {
           <h1 className="hero-name">
             Chris <span className="accent">Yaranga</span>
           </h1>
-          <h2 className="hero-title">Full-Stack &amp; Mobile AR Developer</h2>
+          <h2 className="hero-title">React &middot; Flutter &middot; Unity AR</h2>
           <p className="hero-description">
-            I build modern web apps, cross-platform mobile solutions with
-            Flutter, and immersive AR experiences with Unity. From edge-deployed
-            platforms to business kiosks and augmented reality tools &mdash; I turn
-            ideas into production-ready products.
+            I build high-performance web applications with React, cross-platform
+            mobile apps with Flutter, and immersive AR experiences with Unity.
+            Three platforms, one developer &mdash; from idea to production.
           </p>
           <div className="hero-cta">
             <a href="#projects" className="btn btn-primary">
