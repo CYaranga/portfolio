@@ -157,7 +157,7 @@ ul { list-style: none; }
 .about-text { font-size: 1.02rem; line-height: 1.85; color: var(--color-oatmeal); }
 .about-text p { margin-bottom: 1.25rem; }
 .about-text strong { color: var(--color-palladian); font-weight: 600; }
-.about-stats { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+.about-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
 .stat-card {
   text-align: center; padding: 1.75rem 1rem;
   background: rgba(44, 59, 77, 0.25); border-radius: 12px;
@@ -172,6 +172,45 @@ ul { list-style: none; }
   display: block; font-size: 0.85rem; color: var(--color-oatmeal);
   margin-top: 0.35rem; font-weight: 500;
 }
+
+/* ============================
+   SERVICES
+   ============================ */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.service-card {
+  background: rgba(44, 59, 77, 0.2); border: 1px solid rgba(238, 233, 223, 0.06);
+  border-radius: 16px; padding: 2.25rem; transition: all 0.3s ease;
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--color-burning-flame), var(--color-truffle-trouble));
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.service-card:hover {
+  border-color: rgba(255, 177, 98, 0.2);
+  background: rgba(44, 59, 77, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+.service-card:hover::before { opacity: 1; }
+.service-icon {
+  width: 48px; height: 48px; margin-bottom: 1.25rem;
+  color: var(--color-burning-flame);
+  background: rgba(255, 177, 98, 0.08);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  padding: 10px;
+}
+.service-icon svg { width: 28px; height: 28px; }
+.service-title {
+  font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;
+  color: var(--color-palladian);
+}
+.service-description {
+  font-size: 0.92rem; color: var(--color-oatmeal); line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+.service-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
 /* ============================
    SKILLS
@@ -226,6 +265,12 @@ ul { list-style: none; }
 }
 .project-link:hover { color: var(--color-burning-flame); }
 .project-link svg { width: 20px; height: 20px; }
+.project-header-right { display: flex; align-items: center; gap: 0.75rem; }
+.project-category {
+  font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+  color: var(--color-burning-flame); background: rgba(255, 177, 98, 0.08);
+  padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid rgba(255, 177, 98, 0.15);
+}
 .project-name {
   font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem;
   color: var(--color-palladian);
@@ -359,7 +404,8 @@ ul { list-style: none; }
   .hero-content { max-width: 100%; }
   .hero-circle { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about-stats { grid-template-columns: repeat(3, 1fr); }
+  .about-stats { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }

@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 const navItems = [
   { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
+  { href: '#services', label: 'Services' },
   { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ];

@@ -9,11 +9,12 @@ const Hero: React.FC = () => {
           <h1 className="hero-name">
             Chris <span className="accent">Yaranga</span>
           </h1>
-          <h2 className="hero-title">Full-Stack Developer</h2>
+          <h2 className="hero-title">Full-Stack &amp; Mobile AR Developer</h2>
           <p className="hero-description">
-            I build modern web experiences with React, TypeScript, and Cloud
-            technologies. Passionate about creating performant, scalable
-            solutions from edge to user.
+            I build modern web apps, cross-platform mobile solutions with
+            Flutter, and immersive AR experiences with Unity. From edge-deployed
+            platforms to business kiosks and augmented reality tools &mdash; I turn
+            ideas into production-ready products.
           </p>
           <div className="hero-cta">
             <a href="#projects" className="btn btn-primary">

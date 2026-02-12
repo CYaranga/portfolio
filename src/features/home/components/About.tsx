@@ -1,9 +1,10 @@
 import React from 'react';
 
 const stats = [
-  { value: '10+', label: 'Projects Built' },
+  { value: '10+', label: 'Projects Shipped' },
+  { value: '3', label: 'Platforms' },
   { value: '8+', label: 'Technologies' },
-  { value: 'Full-Stack', label: 'Web & Mobile & AR' },
+  { value: 'AR/VR', label: 'Specialist' },
 ];
 
 const About: React.FC = () => {
@@ -12,28 +13,40 @@ const About: React.FC = () => {
       <div className="container">
         <h2 className="section-title reveal">About Me</h2>
         <p className="section-subtitle reveal">
-          A developer who loves turning ideas into reality
+          A developer who bridges the gap between web, mobile, and immersive tech
         </p>
         <div className="about-grid">
           <div className="about-text reveal">
             <p>
-              I'm a versatile <strong>full-stack developer</strong> with a
-              passion for building modern, user-centric applications. My journey
-              in software spans <strong>web applications</strong>,{' '}
-              <strong>mobile apps</strong>, and even{' '}
-              <strong>augmented reality</strong> experiences.
+              I'm a <strong>full-stack developer</strong> with a unique
+              combination of skills across <strong>web</strong>,{' '}
+              <strong>mobile</strong>, and{' '}
+              <strong>augmented reality</strong> development. I don't just write
+              code &mdash; I build complete solutions that solve real business
+              problems.
             </p>
             <p>
-              I specialize in the <strong>TypeScript and React ecosystem</strong>
-              , with deep experience in edge computing using{' '}
-              <strong>Cloudflare Workers</strong>. From interactive Flutter
-              kiosks to Unity-based AR shopping tools, I enjoy tackling diverse
-              challenges and delivering solutions that make a real impact.
+              On the web, I specialize in{' '}
+              <strong>React and TypeScript</strong> with server-side rendering
+              on <strong>Cloudflare Workers</strong>, delivering lightning-fast
+              applications at the edge. For mobile, I use{' '}
+              <strong>Flutter</strong> to create cross-platform business apps
+              &mdash; from interactive retail kiosks and point-of-sale displays
+              to customer-facing tools with offline-first architecture.
             </p>
             <p>
-              I believe in writing clean, maintainable code and leveraging modern
-              cloud infrastructure to build applications that are both
-              performant and scalable.
+              Where I truly stand out is in{' '}
+              <strong>augmented reality for business</strong>. Using{' '}
+              <strong>Unity and C#</strong>, I've built AR shopping experiences
+              that let customers visualize products in their real space,
+              interactive 3D totems for exhibitions, and gesture-driven displays
+              for retail environments. I bring together the technical depth of
+              game engine development with practical business applications.
+            </p>
+            <p>
+              Whether it's a cloud-native web platform, a Flutter app for your
+              sales team, or an AR experience for your showroom &mdash; I
+              deliver production-ready solutions from concept to deployment.
             </p>
           </div>
           <div className="about-stats reveal">

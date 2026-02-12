@@ -6,51 +6,58 @@ interface Project {
   tech: string[];
   url: string;
   stars?: number;
+  category: string;
 }
 
 const projects: Project[] = [
   {
     name: 'Expenses Manager',
     description:
-      'A modern family expense tracking application with real-time analytics, multi-user support, and an intuitive dashboard. Built entirely on edge infrastructure for global performance.',
-    tech: ['TypeScript', 'React', 'Hono', 'Cloudflare Workers'],
+      'Full-stack family expense tracking app with real-time analytics dashboard, multi-user accounts, and budget insights. Built on edge infrastructure with Cloudflare Workers for sub-50ms response times globally.',
+    tech: ['TypeScript', 'React', 'Hono', 'Cloudflare Workers', 'D1'],
     url: 'https://github.com/CYaranga/expenses-manager',
     stars: 1,
-  },
-  {
-    name: 'Rebeca Totem',
-    description:
-      'Cross-platform interactive totem application designed for touch-screen displays, featuring smooth animations and dynamic content management for retail environments.',
-    tech: ['Dart', 'Flutter', 'Material Design'],
-    url: 'https://github.com/CYaranga/rebeca_totem',
+    category: 'Web App',
   },
   {
     name: 'SmartBuy AR',
     description:
-      'Augmented reality shopping experience that lets users visualize products in their real environment before purchasing, bridging the gap between online and physical retail.',
-    tech: ['C#', 'Unity', 'AR Foundation'],
+      'Business-grade augmented reality shopping tool that lets retail customers point their phone at a space and see how products look before buying. Includes real-time 3D rendering, surface detection, and product catalog integration.',
+    tech: ['C#', 'Unity', 'AR Foundation', 'Vuforia'],
     url: 'https://github.com/CYaranga/SmartBuy',
+    category: 'AR / Unity',
+  },
+  {
+    name: 'Rebeca Totem',
+    description:
+      'Cross-platform interactive kiosk application deployed in retail environments. Features touch-driven UI with smooth 60fps animations, dynamic content management, and offline-first architecture for unreliable network conditions.',
+    tech: ['Dart', 'Flutter', 'Material Design', 'SQLite'],
+    url: 'https://github.com/CYaranga/rebeca_totem',
+    category: 'Mobile / Flutter',
   },
   {
     name: 'Rebeca Totem Unity',
     description:
-      'Interactive 3D totem experience built with Unity featuring gesture recognition, particle effects, and real-time content rendering for immersive displays.',
-    tech: ['C#', 'Unity', '3D Graphics'],
+      'Premium 3D interactive display for exhibitions and showrooms. Features gesture recognition, particle effects, real-time content rendering, and multi-screen support for immersive brand experiences.',
+    tech: ['C#', 'Unity', '3D Graphics', 'Shader Graph'],
     url: 'https://github.com/CYaranga/RebecaTotemUnity',
+    category: 'AR / Unity',
+  },
+  {
+    name: 'Rebeca Clothes',
+    description:
+      'Retail management system for a fashion business handling inventory tracking, sales reporting, and customer management. Built with C# for desktop deployment in physical store environments.',
+    tech: ['C#', '.NET', 'SQL Server', 'WPF'],
+    url: 'https://github.com/CYaranga/rebeca-clothes',
+    category: 'Desktop / Business',
   },
   {
     name: 'Private Logger',
     description:
-      'A lightweight, privacy-focused logging utility for TypeScript applications with structured output, configurable levels, and zero external dependencies.',
+      'Privacy-first structured logging utility for TypeScript applications. Zero external dependencies, configurable output levels, and built-in PII scrubbing for GDPR-compliant application logging.',
     tech: ['TypeScript', 'Node.js'],
     url: 'https://github.com/CYaranga/private_logger',
-  },
-  {
-    name: 'NoMusicPaid',
-    description:
-      'Platform for discovering and sharing royalty-free music, enabling content creators to find the perfect soundtrack without licensing concerns.',
-    tech: ['JavaScript', 'Web APIs'],
-    url: 'https://github.com/CYaranga/NoMusicPaid',
+    category: 'Library',
   },
 ];
 
@@ -79,7 +86,9 @@ const Projects: React.FC = () => {
     <section className="section section-alt" id="projects">
       <div className="container">
         <h2 className="section-title reveal">Featured Projects</h2>
-        <p className="section-subtitle reveal">Some things I've built</p>
+        <p className="section-subtitle reveal">
+          Real solutions I've built across web, mobile, and AR
+        </p>
         <div className="projects-grid">
           {projects.map((project, i) => (
             <div
@@ -90,15 +99,18 @@ const Projects: React.FC = () => {
                 <span className="project-icon">
                   <FolderIcon />
                 </span>
-                <a
-                  href={project.url}
-                  className="project-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${project.name} on GitHub`}
-                >
-                  <ExternalLinkIcon />
-                </a>
+                <div className="project-header-right">
+                  <span className="project-category">{project.category}</span>
+                  <a
+                    href={project.url}
+                    className="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.name} on GitHub`}
+                  >
+                    <ExternalLinkIcon />
+                  </a>
+                </div>
               </div>
               <h3 className="project-name">{project.name}</h3>
               <p className="project-description">{project.description}</p>
