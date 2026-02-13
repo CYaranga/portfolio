@@ -51,6 +51,7 @@ ul { list-style: none; }
   color: var(--color-palladian);
   background: rgba(238, 233, 223, 0.06);
 }
+.nav-check { display: none; }
 .nav-toggle {
   display: none; background: none; border: none; cursor: pointer; padding: 0.5rem;
 }
@@ -58,9 +59,9 @@ ul { list-style: none; }
   display: block; width: 22px; height: 2px; background: var(--color-palladian);
   margin: 5px 0; transition: all 0.3s ease; border-radius: 1px;
 }
-.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.nav-toggle.active span:nth-child(2) { opacity: 0; }
-.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.nav-check:checked ~ .nav-toggle span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-check:checked ~ .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav-check:checked ~ .nav-toggle span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* ============================
    HERO
@@ -377,15 +378,18 @@ ul { list-style: none; }
   50% { transform: translate(20px, -10px) scale(1.05); }
 }
 
-/* Scroll reveal */
-.js .reveal {
-  opacity: 0; transform: translateY(25px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+/* Section reveal - CSS only */
+.reveal {
+  animation: revealUp 0.8s ease both;
 }
-.js .reveal.visible { opacity: 1; transform: translateY(0); }
-.js .reveal-delay-1 { transition-delay: 0.1s; }
-.js .reveal-delay-2 { transition-delay: 0.2s; }
-.js .reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-1 { animation-delay: 0.1s; }
+.reveal-delay-2 { animation-delay: 0.2s; }
+.reveal-delay-3 { animation-delay: 0.3s; }
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* ============================
    RESPONSIVE
@@ -399,7 +403,7 @@ ul { list-style: none; }
     flex-direction: column; padding: 1rem 1.5rem 1.5rem;
     border-bottom: 1px solid rgba(238, 233, 223, 0.06);
   }
-  .nav-links.open { display: flex; }
+  .nav-check:checked ~ .nav-links { display: flex; }
   .nav-link { padding: 0.75rem 1rem; }
   .hero-content { max-width: 100%; }
   .hero-circle { display: none; }

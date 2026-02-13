@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 const navItems = [
@@ -9,8 +9,6 @@ const navItems = [
 ];
 
 const Layout: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <>
       <nav className="nav">
@@ -18,23 +16,16 @@ const Layout: React.FC = () => {
           <a href="#home" className="nav-logo">
             CY<span className="accent">.</span>
           </a>
-          <button
-            className={`nav-toggle ${menuOpen ? 'active' : ''}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation"
-          >
+          <input type="checkbox" id="nav-check" className="nav-check" />
+          <label htmlFor="nav-check" className="nav-toggle" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
-          </button>
-          <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          </label>
+          <ul className="nav-links">
             {navItems.map((item) => (
               <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="nav-link"
-                  onClick={() => setMenuOpen(false)}
-                >
+                <a href={item.href} className="nav-link">
                   {item.label}
                 </a>
               </li>

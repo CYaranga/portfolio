@@ -70,11 +70,9 @@ function generateHTML(appHTML: string): string {
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 	<style>${cssVariables}</style>
 	<style>${styles}</style>
-	<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 	<div id="root">${appHTML}</div>
-	<script type="module" src="/client.js"></script>
 </body>
 </html>`;
 }
